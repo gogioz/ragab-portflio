@@ -21,7 +21,9 @@ app.use(
   })
 );
 
-app.use("/", articlesRoute, podcastsRoute, adminsRoute);
+app.use("/", articlesRoute);
+app.use("/", podcastsRoute);
+app.use("/", adminsRoute);
 
 mongoose
   // connect to the database
