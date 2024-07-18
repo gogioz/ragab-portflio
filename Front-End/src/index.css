@@ -1,0 +1,24 @@
+@tailwind base;
+
+@font-face {
+  font-family: Amiri-Regular;
+  src: url("./Amiri,Rubik/Amiri/Amiri-Regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: Amiri-Bold;
+  src: url("./Amiri,Rubik/Amiri/Amiri-Bold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Droid-Regular;
+  src: url("./Amiri,Rubik/droid-arabic-kufi-e4d28ab8b2/DroidKufi-Regular.ttf")
+    format("opentype");
+}
+@font-face {
+  font-family: Droid-Bold;
+  src: url("./Amiri,Rubik/droid-arabic-kufi-e4d28ab8b2/DroidKufi-Bold.ttf")
+    format("opentype");
+}
+
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,42 @@
+.footer-links ul li a {
+  background-color: transparent;
+  color: #212529;
+  font-size: 4.4rem;
+}
+.ul-footer-links {
+  gap: 3rem;
+}
+
+.icon-facebook:hover {
+  color: #0866ff;
+}
+
+.icon-twitter:hover {
+  color: #1da0f3;
+}
+
+.icon-linkedin:hover {
+  color: #0a66c2;
+}
+
+.icon-email:hover {
+  color: #ea4335;
+}
+
+/* @media (min-width: 1230px) and (max-width: 1550px) {
+  .footer-links ul li a {
+    font-size: 3.6rem;
+  }
+}
+@media (max-width: 1229px) {
+  .footer-links ul li a {
+    font-size: 3rem;
+    padding-right: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .footer-links ul li a {
+    font-size: 5rem;
+    padding-right: 1rem;
+  }
+} */
