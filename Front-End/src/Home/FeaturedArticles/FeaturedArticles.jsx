@@ -51,7 +51,7 @@ function FeaturedArticles(lang) {
                     (language === "ar" && !article.titleTrans)
                       ? "Amiri"
                       : "Droid"
-                  }-Bold line-clamp-2 sm:px-2 sm:pt-3  md:px-0 md:pt-1 lg:px-1  tracking-tighter  ${
+                  }-Bold  sm:px-2 sm:pt-3  md:px-0 md:pt-1 lg:px-1  tracking-tighter  ${
                     (language === "en" && article.title) ||
                     (language === "ar" && !article.titleTrans)
                       ? "sm:text-[22px] md:text-xl xl:text-3xl 5xl:text-4xl"
@@ -78,7 +78,7 @@ function FeaturedArticles(lang) {
                     (language === "en" && article.description) ||
                     (language === "ar" && !article.descriptionTrans)
                       ? "sm:text-lg md:text-md sm:line-clamp-3 xl:text-2xl xl:leading-8"
-                      : "sm:text-md md:text-sm sm:line-clamp-4 lg:text-md  lg:leading-normal xl:text-xl xl:leading-7"
+                      : "sm:text-md md:text-sm sm:line-clamp-3 lg:text-md  lg:leading-normal xl:text-xl xl:leading-7"
                   } xl:tracking-tight `}
                   dir={`${article.title ? "" : "rtl"}`}
                 >
