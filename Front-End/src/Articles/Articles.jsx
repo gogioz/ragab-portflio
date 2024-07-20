@@ -61,7 +61,7 @@ function Articles(lang) {
                   (language === "ar" && !article.descriptionTrans)
                     ? "sm:text-2xl 5xl:text-3xl"
                     : "sm:text-xl 5xl:text-2xl"
-                } line-clamp-1
+                } 
                font-${
                  (language === "en" && article.description) ||
                  (language === "ar" && !article.descriptionTrans)
@@ -89,7 +89,7 @@ function Articles(lang) {
                   (language === "ar" && !article.descriptionTrans)
                     ? "Amiri"
                     : "Droid"
-                }-Regular  text-[#063242] line-clamp-5 ${
+                }-Regular  text-[#063242] line-clamp-3 ${
                   (language === "en" && article.description) ||
                   (language === "ar" && !article.descriptionTrans)
                     ? "sm:text-lg 5xl:text-2xl"
