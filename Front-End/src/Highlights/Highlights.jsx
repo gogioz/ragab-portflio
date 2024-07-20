@@ -11,7 +11,7 @@ function Highlights(lang) {
     setContent(e.target.value);
   }
   return (
-    <div className=" sm:px-3  flex bg-[#ebebec]  flex-col   sm:pt-[3.5rem] md:pt-[5rem] 3xl:pt-[6rem]    ">
+    <div className=" sm:px-3  flex bg-[#ebebec]  flex-col   sm:pt-[4.3rem] md:pt-[6rem]    ">
       <h2
         className={`text-center  py-8 font-${
           language === "en" ? "Amiri" : "Droid"

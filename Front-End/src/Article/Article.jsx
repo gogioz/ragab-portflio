@@ -35,7 +35,7 @@ function Article(lang) {
   }, [id]);
 
   return (
-    <div className="flex  justify-center items-center my-4  text-[#1e1e1f] pt-4">
+    <div className="flex  justify-center items-center   text-[#1e1e1f]  sm:pt-[4.3rem] md:pt-[4.7rem]    lg:pt-[6rem] ">
       <div
         className="sm:mt-4 flex flex-col justify-center items-center sm:gap-y-2 xl:gap-y-4"
         id="article"
@@ -92,7 +92,7 @@ function Article(lang) {
                         }`}
                       >
                         <img
-                          src={`../../public/${images[index]}`}
+                          src={`/${images[index]}`}
                           className="sm:w-[100%]  xl:w-[50%] sm:px-2 md:px-4 "
                         />
                       </div>
@@ -115,7 +115,7 @@ function Article(lang) {
                       }`}
                     >
                       <img
-                        src={`../../public/${images[index]}`}
+                        src={`/${images[index]}`}
                         className="sm:w-[100%]  xl:w-[50%] sm:px-2 md:px-4 "
                       />
                     </div>

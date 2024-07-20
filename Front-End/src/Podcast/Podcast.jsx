@@ -82,7 +82,7 @@ function Podcast(lang) {
                 </p>
                 <div className="flex sm:justify-between md:justify-around  flex-row-reverse sm:pb-2 md:pb-5 lg:pb-2 lg:block">
                   <img
-                    src={`../../public/${episode.episodeCover}`}
+                    src={`/${episode.episodeCover}`}
                     alt=""
                     className="sm:w-[40%] md:w-[30%]  sm:rounded-full lg:hidden"
                   />

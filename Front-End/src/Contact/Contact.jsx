@@ -8,8 +8,8 @@ function Contact(lang) {
     >
       <div
         className={`flex flex-col items-center bg-[#ebebec] sm:space-y-3   sm:py-7 ${
-          language === "en" ? "md:py-9" : "md:py-8"
-        }    w-full   sm:pt-[5rem] md:pt-[6.5rem]  xl:pt-[8rem]`}
+          language === "en" ? "md:py-10" : "md:py-8"
+        }    w-full   sm:pt-[5.5rem] md:pt-[7.3rem]  xl:pt-[8rem] `}
       >
         <h2
           className={`font-${
