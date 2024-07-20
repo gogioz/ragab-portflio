@@ -38,11 +38,7 @@ function FeaturedArticles(lang) {
               key={article._id}
             >
               <div className="sm:w-[100%] md:w-[40%] lg:w-[40%]  4xl:max-w-[30%] flex flex-none ">
-                <img
-                  src={`../../../public/${article.image[0]}`}
-                  className=" "
-                  alt=""
-                />
+                <img src={`/${article.image[0]}`} className=" " alt="" />
               </div>
               <div className="flex flex-col flex-1 justify-around sm:gap-y-1 sm:px-1 sm:py-1   sm:pl-1  md:px-1 md:py-0 md:gap-y-0 lg:gap-y-2">
                 <h2

@@ -51,11 +51,7 @@ function Article(lang) {
         >
           {title ? title : titleTrans}
         </h1>
-        <img
-          src={`../../public/${image[0]}`}
-          alt=""
-          className="sm:px-2 md:px-4 py-4"
-        />
+        <img src={`/${image[0]}`} alt="" className="sm:px-2 md:px-4 py-4" />
 
         <p className="font-Amiri-Regular self-end sm:pr-3 sm:text-lg xl:pr-16 xl:text-3xl">
           {date}

@@ -48,11 +48,7 @@ function Articles(lang) {
             key={article._id}
             to={`/articles/${article._id}`}
           >
-            <img
-              src={`../../public/${article.image[0]}`}
-              alt=""
-              className=" w-[100%]"
-            />
+            <img src={`/${article.image[0]}`} alt="" className=" w-[100%]" />
 
             <div className="sm:py-1 sm:px-2 5xl:px-5  flex flex-col justify-around">
               <h3
