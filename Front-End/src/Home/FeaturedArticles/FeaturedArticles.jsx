@@ -51,7 +51,7 @@ function FeaturedArticles(lang) {
                     (language === "ar" && !article.titleTrans)
                       ? "Amiri"
                       : "Droid"
-                  }-Bold line-clamp-1 sm:px-2 sm:pt-3  md:px-0 md:pt-1 lg:px-1   ${
+                  }-Bold line-clamp-2 sm:px-2 sm:pt-3  md:px-0 md:pt-1 lg:px-1   ${
                     (language === "en" && article.title) ||
                     (language === "ar" && !article.titleTrans)
                       ? "sm:text-2xl md:text-xl xl:text-3xl 5xl:text-4xl"
