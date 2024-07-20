@@ -39,7 +39,7 @@ function FeaturedArticles(lang) {
             >
               <div className="sm:w-[100%] md:w-[40%] lg:w-[40%]  4xl:max-w-[30%] flex flex-none ">
                 <img
-                  src={`../../../public/${article.image[0]}`}
+                  src={`/${article.image[0]}`}
                   className=" "
                   alt=""
                 />
