@@ -7,7 +7,7 @@ function FeaturedArticles(lang) {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
     axios
-      .get("http://ragaboz.vercel.app/articles")
+      .get("https://ragaboz.vercel.app/articles")
       .then((res) => {
         setArticles(res.data.data);
       })

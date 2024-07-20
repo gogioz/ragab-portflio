@@ -11,7 +11,7 @@ function Podcast(lang) {
 
   useEffect(() => {
     axios
-      .get(`http://ragaboz.vercel.app/podcasts/${id}`)
+      .get(`https://ragaboz.vercel.app/podcasts/${id}`)
       .then((res) => {
         console.log(res.data);
         setName(res.data.name);
