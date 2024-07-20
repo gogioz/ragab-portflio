@@ -67,7 +67,7 @@ function Articles(lang) {
                  (language === "ar" && !article.descriptionTrans)
                    ? "Amiri"
                    : "Droid"
-               }-Bold sm:leading-loose
+               }-Bold 
                 `}
                 dir={
                   (language === "en" && article.description) ||
