@@ -49,7 +49,7 @@ function Articles(lang) {
             to={`/articles/${article._id}`}
           >
             <img
-              src={`../../public/${article.image[0]}`}
+              src={`/${article.image[0]}`}
               alt=""
               className=" w-[100%]"
             />
