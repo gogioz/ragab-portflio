@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Header(lang) {
   const language = lang.lang.lang;
   return (
@@ -31,7 +32,7 @@ function Header(lang) {
           ? "Ahmed Ragab is a television producer and investigative journalist with a sixteen-year track record of producing high-quality print, television, and online reports"
           : "أحمد رجب هو منتج تلفزيوني وصحفي استقصائي يمتلك سجلًا حافلًا يمتد لستة عشر عامًا في إنتاج تقارير عالية الجودة في الصحافة المطبوعة والتلفزيون والإنترنت."}
 
-        <a
+        <Link
           href="about"
           className={`underline ${
             language === "en"
@@ -40,7 +41,7 @@ function Header(lang) {
           } `}
         >
           {language === "en" ? "more" : "للمزيد"}
-        </a>
+        </Link>
       </p>
     </header>
   );
