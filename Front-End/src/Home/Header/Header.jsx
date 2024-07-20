@@ -33,7 +33,7 @@ function Header(lang) {
           : "أحمد رجب هو منتج تلفزيوني وصحفي استقصائي يمتلك سجلًا حافلًا يمتد لستة عشر عامًا في إنتاج تقارير عالية الجودة في الصحافة المطبوعة والتلفزيون والإنترنت."}
 
         <Link
-          href="about"
+          to="/about"
           className={`underline ${
             language === "en"
               ? "pl-2 font-Amiri-Regular"
