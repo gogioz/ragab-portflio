@@ -18,7 +18,7 @@ function Article(lang) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/articles/${id}`)
+      .get(`http://ragaboz.vercel.app/articles/${id}`)
       .then((res) => {
         console.log(res.data);
         setTitle(res.data.title);

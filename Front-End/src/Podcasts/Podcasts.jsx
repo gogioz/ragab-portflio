@@ -8,7 +8,7 @@ function Podcasts(lang) {
   const [podcasts, setPodcasts] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/podcasts")
+      .get("http://ragaboz.vercel.app/podcasts")
       .then((res) => {
         console.log(res.data.data);
         setPodcasts(res.data.data);

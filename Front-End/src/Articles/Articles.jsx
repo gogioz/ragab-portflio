@@ -9,7 +9,7 @@ function Articles(lang) {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/articles")
+      .get("http://ragaboz.vercel.app/articles")
       .then((res) => {
         setArticles(res.data.data);
         console.log(res.data.data);
