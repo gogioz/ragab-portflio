@@ -49,7 +49,7 @@ function Podcast(lang) {
             >
               <div className="sm:w-[0%] lg:w-[30%]  5xl:w-[30%] flex flex-none justify-end ">
                 <img
-                  src={`../../../public/${episode.episodeCover}`}
+                  src={`/${episode.episodeCover}`}
                   className=" sm:hidden lg:block"
                   alt=""
                 />
