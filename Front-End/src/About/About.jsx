@@ -3,7 +3,7 @@ import img from "../../public/home-2.png";
 function About(lang) {
   const language = lang.lang;
   return (
-    <div className=" bg-[#ebebec] flex flex-col justify-center items-center ">
+    <div className=" bg-[#ebebec] flex flex-col justify-center items-center sm:pt-[5rem] md:pt-[6.5rem]  xl:pt-[7rem]">
       <h2
         className={`text-center sm:text-4xl py-6 font-${
           language === "en" ? "Amiri" : "Droid"

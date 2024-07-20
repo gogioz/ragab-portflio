@@ -4,12 +4,12 @@ function Contact(lang) {
     <div
       className={`flex justify-center items-center sm:py-0 ${
         language === "en" ? "5xl:py-2" : "5xl:py-3"
-      } `}
+      }  `}
     >
       <div
         className={`flex flex-col items-center bg-[#ebebec] sm:space-y-3   sm:py-7 ${
           language === "en" ? "md:py-9" : "md:py-8"
-        }   3xl:pt-5 w-full 3xl:py-8`}
+        }    w-full   sm:pt-[5rem] md:pt-[6.5rem]  xl:pt-[8rem]`}
       >
         <h2
           className={`font-${
