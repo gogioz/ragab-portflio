@@ -1,41 +1,41 @@
 import express from "express";
 import { Article } from "../models/articleModel.js";
-import multer from "multer";
+// import multer from "multer";
 import { MongoClient, ObjectId } from "mongodb";
 import { mongoDBURL } from "../config.js";
 const client = new MongoClient(mongoDBURL);
 
 const router = express.Router();
 
-// Set up Multer
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./assets/");
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
-  },
-});
+// // Set up Multer
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "./assets/");
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, file.originalname);
+//   },
+// });
 
-const upload = multer({ storage: storage });
+// const upload = multer({ storage: storage });
 
-const uploadImages = upload.array("image");
+// const uploadImages = upload.array("image");
 
-router.post("/articles", uploadImages, async (req, res) => {
+router.post("/articles", , async (req, res) => {
   try {
     await client.connect();
     // Get the database and collection on which to run the operation
     const db = client.db("test");
     const col = db.collection("articles");
     const { title, titleTrans, description, descriptionTrans, date } = req.body;
-    const imageName = req.files.map((image) => image.filename);
+    // const imageName = req.files.map((image) => image.filename);
     const newArticle = {
       title: title,
       titleTrans: titleTrans,
       description: description,
       descriptionTrans: descriptionTrans,
       date: date,
-      image: imageName,
+      // image: imageName,
     };
 
     const p = await col.insertOne(newArticle);
