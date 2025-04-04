@@ -114,14 +114,17 @@ router.put("/articles/:id", upload.none(), async (req, res) => {
 router.delete("/articles/:id", async (req, res) => {
   try {
     const { id } = req.params;
+
     const result = await Article.findByIdAndDelete(id);
-    if (result === false) {
+
+    if (!result) {
       return res.status(404).send({ message: "Article not found" });
     }
+
     return res.status(200).send({ message: "Article deleted successfully" });
   } catch (err) {
-    console.log(err.message);
-    res.status(500).send({ message: "Article not found" });
+    console.error("Delete Error:", err.message);
+    res.status(500).send({ message: "Internal server error" });
   }
 });
 
