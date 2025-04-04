@@ -21,29 +21,28 @@ const upload = multer({ storage: storage });
 
 const uploadImages = upload.array("image");
 
-router.post("/articles",  async (req, res) => {
+router.post("/articles", upload.none(), async (req, res) => {
   try {
     await client.connect();
-    // Get the database and collection on which to run the operation
     const db = client.db("test");
     const col = db.collection("articles");
+
     const { title, titleTrans, description, descriptionTrans, date } = req.body;
-    // const imageName = req.files.map((image) => image.filename);
+
     const newArticle = {
-      title: title,
-      titleTrans: titleTrans,
-      description: description,
-      descriptionTrans: descriptionTrans,
-      date: date,
-      // image: imageName,
+      title,
+      titleTrans,
+      description,
+      descriptionTrans,
+      date,
     };
 
     const p = await col.insertOne(newArticle);
-    console.log(newArticle);
+    console.log("Inserted article:", newArticle);
 
     return res.send(p);
   } catch (err) {
-    console.log(err.message);
+    console.error(err.message);
     res.status(500).send({ message: err.message });
   }
 });
