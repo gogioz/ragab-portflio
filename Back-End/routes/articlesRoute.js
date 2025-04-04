@@ -79,21 +79,21 @@ router.get("/articles/:id", async (req, res) => {
 });
 
 // update an article in the database
-router.put("/articles/:id", uploadImages, async (req, res) => {
+router.put("/articles/:id", upload.none(), async (req, res) => {
   try {
+    await client.connect();
     const database = client.db("test");
     const article = database.collection("articles");
+
     const { title, titleTrans, description, descriptionTrans, date } = req.body;
-    const imageName = req.files.map((image) => image.filename);
 
     const update = {
       $set: {
-        title: title,
-        titleTrans: titleTrans,
-        description: description,
-        descriptionTrans: descriptionTrans,
-        date: date,
-        image: imageName,
+        title,
+        titleTrans,
+        description,
+        descriptionTrans,
+        date,
       },
       $inc: {
         views: 1,
@@ -101,19 +101,15 @@ router.put("/articles/:id", uploadImages, async (req, res) => {
     };
 
     const { id } = req.params;
-
     const filter = { _id: new ObjectId(id) };
-
-    // Update the document
 
     const result = await article.updateOne(filter, update);
     return res.send(result);
   } catch (err) {
-    console.log(err.message);
+    console.error(err.message);
     res.status(500).send({ message: err.message });
   }
 });
-
 // delete article from the database
 router.delete("/articles/:id", async (req, res) => {
   try {
