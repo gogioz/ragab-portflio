@@ -18,8 +18,8 @@ app.use(
   cors({
      origin: "*",  // Allow all origins (for development). For production, use your frontend URL like "http://localhost:3000"
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"], // Allow the necessary headers
-    credentials: true, 
+    allowedHeaders: ["Content-Type"], // Allow the necessary headers
+    
   })
 );
 
