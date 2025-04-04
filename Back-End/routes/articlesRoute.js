@@ -1,7 +1,7 @@
 import express from "express";
 import { Article } from "../models/articleModel.js";
 import multer from "multer";
-import cors from "cors";
+
 import { MongoClient, ObjectId } from "mongodb";
 import { mongoDBURL } from "../config.js";
 const client = new MongoClient(mongoDBURL);
@@ -9,8 +9,7 @@ const client = new MongoClient(mongoDBURL);
 const router = express.Router();
 const app = express();
 
-// ✅ Allow requests from any origin (you can restrict it later)
-app.use(cors());
+
 
 // Set up Multer
 const storage = multer.diskStorage({
