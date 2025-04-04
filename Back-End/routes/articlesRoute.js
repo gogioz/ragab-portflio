@@ -15,6 +15,7 @@ app.use(
     allowedHeaders: ["Content-Type"],
   })
 );
+app.use(express.json());
 
 // Set up Multer
 const storage = multer.diskStorage({
