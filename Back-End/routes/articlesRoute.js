@@ -83,37 +83,34 @@ router.get("/articles/:id", async (req, res) => {
 });
 
 // update an article in the database
-router.put("/articles/:id",  async (req, res) => {
+import { ObjectId } from "mongodb";
+
+router.put("/articles/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(id);
     const { title, titleTrans, description, descriptionTrans, date } = req.body;
 
+    const database = client.db("test");
+    const articles = database.collection("articles");
+
+    const filter = { _id: new ObjectId(id) };
     const update = {
       $set: {
-      
         title,
         titleTrans,
         description,
         descriptionTrans,
         date,
       },
-      $inc: {
-        views: 1,
-      },
     };
 
-    const database = client.db("test");
-    const article = database.collection("articles");
-    const filter = { _id: new ObjectId(id) };
-
-    const result = await article.updateOne(filter, update);
+    const result = await articles.updateOne(filter, update);
     return res.send(result);
   } catch (err) {
     console.error(err.message);
     res.status(500).send({ message: err.message });
   }
-});
+});;
 // delete article from the database
 router.delete("/articles/:id", async (req, res) => {
   try {
