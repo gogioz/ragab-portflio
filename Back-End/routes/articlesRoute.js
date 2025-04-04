@@ -1,11 +1,16 @@
 import express from "express";
 import { Article } from "../models/articleModel.js";
 import multer from "multer";
+import cors from "cors";
 import { MongoClient, ObjectId } from "mongodb";
 import { mongoDBURL } from "../config.js";
 const client = new MongoClient(mongoDBURL);
 
 const router = express.Router();
+const app = express();
+
+// ✅ Allow requests from any origin (you can restrict it later)
+app.use(cors());
 
 // Set up Multer
 const storage = multer.diskStorage({
@@ -115,7 +120,7 @@ router.delete("/articles/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
-    const result = await Article.findOne({ _id: new ObjectId(id) });
+    const result = await Article.findOne(id);
 
     if (!result) {
       return res.status(404).send({ message: "Article not found" });
