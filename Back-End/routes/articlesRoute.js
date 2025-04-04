@@ -7,7 +7,7 @@ import { mongoDBURL } from "../config.js";
 const client = new MongoClient(mongoDBURL);
 
 const router = express.Router();
-const app = express();
+
 
 
 
@@ -85,10 +85,7 @@ router.get("/articles/:id", async (req, res) => {
 // update an article in the database
 router.put("/articles/:id", upload.none(), async (req, res) => {
   try {
-    await client.connect();
-    const database = client.db("test");
-    const article = database.collection("articles");
-
+    const { id } = req.params;
     const { title, titleTrans, description, descriptionTrans, date } = req.body;
 
     const update = {
@@ -104,7 +101,8 @@ router.put("/articles/:id", upload.none(), async (req, res) => {
       },
     };
 
-    const { id } = req.params;
+    const database = client.db("test");
+    const article = database.collection("articles");
     const filter = { _id: new ObjectId(id) };
 
     const result = await article.updateOne(filter, update);
