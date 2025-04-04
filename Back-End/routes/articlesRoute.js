@@ -115,7 +115,7 @@ router.delete("/articles/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
-    const result = await Article.findByIdAndDelete(id);
+    const result = await Article.findOne({ _id: new ObjectId(id) });
 
     if (!result) {
       return res.status(404).send({ message: "Article not found" });
