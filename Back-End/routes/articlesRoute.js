@@ -110,7 +110,7 @@ router.put("/articles/:id", async (req, res) => {
     console.error(err.message);
     res.status(500).send({ message: err.message });
   }
-});;
+});
 // delete article from the database
 router.delete("/articles/:id", async (req, res) => {
   try {
