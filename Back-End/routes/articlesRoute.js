@@ -83,7 +83,7 @@ router.get("/articles/:id", async (req, res) => {
 });
 
 // update an article in the database
-router.put("/articles/:id", upload.none(), async (req, res) => {
+router.put("/articles/:id",  async (req, res) => {
   try {
     const { id } = req.params;
     const { title, titleTrans, description, descriptionTrans, date } = req.body;
