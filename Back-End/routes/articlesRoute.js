@@ -1,15 +1,11 @@
 import express from "express";
 import { Article } from "../models/articleModel.js";
 import multer from "multer";
-import { ObjectId } from "mongodb";
 import { MongoClient, ObjectId } from "mongodb";
 import { mongoDBURL } from "../config.js";
 const client = new MongoClient(mongoDBURL);
 
 const router = express.Router();
-
-
-
 
 // Set up Multer
 const storage = multer.diskStorage({
@@ -69,6 +65,7 @@ router.get("/articles", async (req, res) => {
 router.get("/articles/:id", async (req, res) => {
   try {
     const { id } = req.params;
+    // console.log(id)
     console.log(id);
     // Execute query
     const article = await Article.findOne({ _id: id });
@@ -83,17 +80,12 @@ router.get("/articles/:id", async (req, res) => {
 });
 
 // update an article in the database
-
-
 router.put("/articles/:id", async (req, res) => {
   try {
     const { id } = req.params;
+    console.log(id);
     const { title, titleTrans, description, descriptionTrans, date } = req.body;
 
-    const database = client.db("test");
-    const articles = database.collection("articles");
-
-    const filter = { _id: new ObjectId(id) };
     const update = {
       $set: {
         title,
@@ -102,9 +94,16 @@ router.put("/articles/:id", async (req, res) => {
         descriptionTrans,
         date,
       },
+      $inc: {
+        views: 1,
+      },
     };
 
-    const result = await articles.updateOne(filter, update);
+    const database = client.db("test");
+    const article = database.collection("articles");
+    const filter = { _id: new ObjectId(id) };
+
+    const result = await article.updateOne(filter, update);
     return res.send(result);
   } catch (err) {
     console.error(err.message);
