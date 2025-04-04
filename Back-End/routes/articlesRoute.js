@@ -1,7 +1,7 @@
 import express from "express";
 import { Article } from "../models/articleModel.js";
 import multer from "multer";
-
+import { ObjectId } from "mongodb";
 import { MongoClient, ObjectId } from "mongodb";
 import { mongoDBURL } from "../config.js";
 const client = new MongoClient(mongoDBURL);
@@ -83,7 +83,7 @@ router.get("/articles/:id", async (req, res) => {
 });
 
 // update an article in the database
-import { ObjectId } from "mongodb";
+
 
 router.put("/articles/:id", async (req, res) => {
   try {
