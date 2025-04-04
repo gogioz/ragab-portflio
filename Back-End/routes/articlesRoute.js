@@ -86,6 +86,7 @@ router.get("/articles/:id", async (req, res) => {
 router.put("/articles/:id",  async (req, res) => {
   try {
     const { id } = req.params;
+    console.log(id);
     const { title, titleTrans, description, descriptionTrans, date } = req.body;
 
     const update = {
