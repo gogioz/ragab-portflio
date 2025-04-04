@@ -89,24 +89,24 @@ router.put("/articles/:id",  async (req, res) => {
     const { title, titleTrans, description, descriptionTrans, date } = req.body;
 
     const update = {
-      // $set: {
+      $set: {
       _id:id,
         title,
         titleTrans,
         description,
         descriptionTrans,
         date,
-      // },
-      // $inc: {
-        // views: 1,
-      // },
+      },
+      $inc: {
+        views: 1,
+      },
     };
 
     const database = client.db("test");
     const article = database.collection("articles");
-    // const filter = { _id: new ObjectId(id) };
+    const filter = { _id: new ObjectId(id) };
 
-    const result = await article.updateOne( update);
+    const result = await article.updateOne(filter, update);
     return res.send(result);
   } catch (err) {
     console.error(err.message);
