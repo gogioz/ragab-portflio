@@ -91,7 +91,7 @@ router.put("/articles/:id",  async (req, res) => {
 
     const update = {
       $set: {
-      _id:id,
+      
         title,
         titleTrans,
         description,
